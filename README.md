@@ -4,7 +4,7 @@ Unwind is a JSON parsing library inspired by Argo and several others.
 
 It still has a lot of work left to do but the basics are there.
 
-Unwind can do a lot of really cool things. For example take the folling JSON.
+Unwind can do a lot of really cool things. For example take the following JSON.
 
 ```JSON
 {
