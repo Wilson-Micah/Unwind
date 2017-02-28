@@ -3,7 +3,7 @@
 //  Skip Shopper
 //
 //  Created by Micah Wilson on 2/23/17.
-//  Copyright © 2017 GoSkip. All rights reserved.
+//  Copyright © 2017 Micah Wilson. All rights reserved.
 //
 
 import UIKit
