@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E4D4B17F1E677E5B00FE6FBF"
+               BlueprintIdentifier = "E4D4B1A51E6784DD00FE6FBF"
                BuildableName = "Unwind.framework"
                BlueprintName = "Unwind"
                ReferencedContainer = "container:Unwind.xcodeproj">
@@ -28,26 +28,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E4D4B1881E677E5B00FE6FBF"
-               BuildableName = "UnwindTests.xctest"
-               BlueprintName = "UnwindTests"
-               ReferencedContainer = "container:Unwind.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E4D4B17F1E677E5B00FE6FBF"
-            BuildableName = "Unwind.framework"
-            BlueprintName = "Unwind"
-            ReferencedContainer = "container:Unwind.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -64,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E4D4B17F1E677E5B00FE6FBF"
+            BlueprintIdentifier = "E4D4B1A51E6784DD00FE6FBF"
             BuildableName = "Unwind.framework"
             BlueprintName = "Unwind"
             ReferencedContainer = "container:Unwind.xcodeproj">
@@ -82,7 +63,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E4D4B17F1E677E5B00FE6FBF"
+            BlueprintIdentifier = "E4D4B1A51E6784DD00FE6FBF"
             BuildableName = "Unwind.framework"
             BlueprintName = "Unwind"
             ReferencedContainer = "container:Unwind.xcodeproj">
