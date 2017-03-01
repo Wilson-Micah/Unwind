@@ -48,8 +48,8 @@ extension User: Unwind {
 let user: User = json <- "user"
 
 //Nested objects
-let method1: Bool = "settings.nightMode"
-let method2: Bool = ["settings", "nightMode"]
+let method1: Bool = json <- "settings.nightMode"
+let method2: Bool = json <- ["settings", "nightMode"]
 
 ```
 ## License
