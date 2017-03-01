@@ -52,3 +52,6 @@ let method1: Bool = "settings.nightMode"
 let method2: Bool = ["settings", "nightMode"]
 
 ```
+## License
+Unwind is released under the MIT license. Check LICENSE.md for details
+
