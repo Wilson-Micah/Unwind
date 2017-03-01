@@ -10,6 +10,7 @@
 		E4D4B18A1E677E5B00FE6FBF /* Unwind.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4D4B1801E677E5B00FE6FBF /* Unwind.framework */; };
 		E4D4B18F1E677E5B00FE6FBF /* UnwindTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4B18E1E677E5B00FE6FBF /* UnwindTests.swift */; };
 		E4D4B1911E677E5B00FE6FBF /* Unwind.h in Headers */ = {isa = PBXBuildFile; fileRef = E4D4B1831E677E5B00FE6FBF /* Unwind.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E4D4B19B1E677ED900FE6FBF /* Unwind.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D4B19A1E677ED900FE6FBF /* Unwind.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		E4D4B1891E677E5B00FE6FBF /* UnwindTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnwindTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4D4B18E1E677E5B00FE6FBF /* UnwindTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnwindTests.swift; sourceTree = "<group>"; };
 		E4D4B1901E677E5B00FE6FBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4D4B19A1E677ED900FE6FBF /* Unwind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Unwind.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				E4D4B1831E677E5B00FE6FBF /* Unwind.h */,
+				E4D4B19A1E677ED900FE6FBF /* Unwind.swift */,
 				E4D4B1841E677E5B00FE6FBF /* Info.plist */,
 			);
 			path = Unwind;
@@ -149,6 +152,7 @@
 					E4D4B17F1E677E5B00FE6FBF = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = MUJ25NWM5K;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					E4D4B1881E677E5B00FE6FBF = {
@@ -198,6 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4D4B19B1E677ED900FE6FBF /* Unwind.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +327,7 @@
 		E4D4B1951E677E5B00FE6FBF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = MUJ25NWM5K;
@@ -334,6 +340,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.altatech.Unwind;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -341,6 +348,7 @@
 		E4D4B1961E677E5B00FE6FBF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = MUJ25NWM5K;
@@ -360,6 +368,7 @@
 		E4D4B1981E677E5B00FE6FBF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = MUJ25NWM5K;
 				INFOPLIST_FILE = UnwindTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -372,6 +381,7 @@
 		E4D4B1991E677E5B00FE6FBF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = MUJ25NWM5K;
 				INFOPLIST_FILE = UnwindTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
