@@ -1,11 +1,13 @@
 # Unwind
 
-Unwind is a JSON parsing library inspired by Argo and several others.
+Unwind is a JSON parsing library inspired by Argo and several others that allows you to parse your JSON by using infix and postfix operators. It still has a lot of work left to do but the basics are there.
 
-It still has a lot of work left to do but the basics are there.
+## Installation
 
+Just drag the `Unwind.swift` file into your existing project.
+
+## Use
 Unwind can do a lot of really cool things. For example take the following JSON.
-
 ```JSON
 {
 	"someDate": "January 23, 1990",
