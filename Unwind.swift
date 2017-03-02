@@ -6,7 +6,7 @@
 //  Copyright © 2017 Micah Wilson. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 infix operator <-
 infix operator <-?
@@ -22,12 +22,12 @@ postfix operator <-?
 postfix operator <-|
 postfix operator <-|?
 
-enum JSON {
+public enum JSON {
     case dictionary(dictionary : [String : Any])
     case array(array: [Any])
     case error(error: Error)
     
-    init(_ response : Any) {
+    public init(_ response : Any) {
         switch response.self {
         case is [Any]:
             self = .array(array: response as! [Any])
@@ -58,7 +58,7 @@ enum JSON {
         }
     }
     
-    func hasError() -> Bool {
+    public func hasError() -> Bool {
         switch self {
         case .error:
             return true
@@ -68,25 +68,14 @@ enum JSON {
     }
 }
 
-protocol Unwind {
+public protocol Unwind {
     init(json: JSON)
 }
 
-struct User : Unwind {
-    let name: String
-    let age: Int
-    var friends: [User]?
-    
-    init(json: JSON) {
-        name = json <- "Name"
-        age = json <- "Age"
-        friends = json <-|? "Friends"
-    }
-}
 
-extension JSON {
+public extension JSON {
     //infix
-    static func <-<T>(json: JSON, string: String) -> T {
+    public static func <-<T>(json: JSON, string: String) -> T {
         guard let response: T = json <-? string else {
             
             //In case the type isn't optional it will return an empty string instead of crashing
@@ -99,7 +88,7 @@ extension JSON {
         return response
     }
     
-    static func <-?<T>(json: JSON, string: String) -> T? {
+    public static func <-?<T>(json: JSON, string: String) -> T? {
         
         switch json {
         case let .dictionary(dictionary):
@@ -150,12 +139,12 @@ extension JSON {
         }
     }
     
-    static func <-<T>(json: JSON, strings: [String]) -> T {
+    public static func <-<T>(json: JSON, strings: [String]) -> T {
         guard let response: T = json <-? strings else { fatalError("Unable to parse JSON for path: \(strings.joined(separator: " -> "))") }
         return response
     }
     
-    static func <-?<T>(json: JSON, strings: [String]) -> T? {
+    public static func <-?<T>(json: JSON, strings: [String]) -> T? {
         switch json {
         case let .dictionary(dictionary):
             var dict: [String: Any]? = dictionary
@@ -175,12 +164,12 @@ extension JSON {
         }
     }
     
-    static func <-|<T>(json: JSON, string: String) -> [T] {
+    public static func <-|<T>(json: JSON, string: String) -> [T] {
         guard let response: [T] = json <-|? string else { fatalError("Unable to parse JSON for key: \(string)") }
         return response
     }
     
-    static func <-|?<T>(json: JSON, string: String) -> [T]? {
+    public static func <-|?<T>(json: JSON, string: String) -> [T]? {
         switch json {
         case let .dictionary(dictionary):
             guard let arr = dictionary[string] as? [Any] else { return nil }
@@ -200,12 +189,12 @@ extension JSON {
         }
     }
     
-    static func <-|<T>(json: JSON, strings: [String]) -> [T] {
+    public static func <-|<T>(json: JSON, strings: [String]) -> [T] {
         guard let response: [T] = json <-|? strings else { fatalError("Unable to parse JSON for path: \(strings.joined(separator: " -> "))") }
         return response
     }
     
-    static func <-|?<T>(json: JSON, strings: [String]) -> [T]? {
+    public static func <-|?<T>(json: JSON, strings: [String]) -> [T]? {
         switch json {
         case let .dictionary(dictionary):
             var dict: [String: Any]? = dictionary
@@ -241,12 +230,12 @@ extension JSON {
     }
     
     //postfix
-    static postfix func <-<T>(json: JSON) -> T {
+    public static postfix func <-<T>(json: JSON) -> T {
         guard let response: T = json<-? else { fatalError("Unable to parse JSON. Make sure this is an array and not a dictionary.") }
         return response
     }
     
-    static postfix func <-?<T>(json: JSON) -> T? {
+    public static postfix func <-?<T>(json: JSON) -> T? {
         switch json {
         case let .array(array):
             if T.self is Unwind.Type {
@@ -259,12 +248,12 @@ extension JSON {
         }
     }
     
-    static postfix func <-|<T>(json: JSON) -> [T] {
+    public static postfix func <-|<T>(json: JSON) -> [T] {
         guard let response: [T] = json<-|? else { fatalError("Unable to parse JSON. Make sure this is an array and not a dictionary.") }
         return response
     }
     
-    static postfix func <-|?<T>(json: JSON) -> [T]? {
+    public static postfix func <-|?<T>(json: JSON) -> [T]? {
         switch json {
         case let .array(array):
             var results = [T]()

@@ -8,6 +8,18 @@
 
 import UIKit
 
+struct User {
+    let name: String
+    let age: Int
+}
+
+extension User: Unwind {
+    init(json: JSON) {
+        name = json <- "name"
+        age = json <- "age"
+    }
+}
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -43,7 +55,6 @@ class ViewController: UIViewController {
         print(user)
         print(method1)
         print(method2)
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,18 +62,5 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
 }
 
-struct User {
-    let name: String
-    let age: Int
-}
-
-extension User: Unwind {
-    init(json: JSON) {
-        name = json <- "name"
-        age = json <- "age"
-    }
-}
-        
